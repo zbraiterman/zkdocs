@@ -31,3 +31,7 @@ A STARK-style proof can be understood through the following conceptual sequence.
  \alicework{\varu = \varg^\varr}
  $$
 {{< /rawhtml >}}
+
+-----
+
+### Non-interactive protocol
