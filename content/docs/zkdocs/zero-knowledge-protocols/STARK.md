@@ -20,8 +20,6 @@ Here, the symbols mean:
 * __$C$:__ the computation or constraint system being verified.
 * __$C(\vec{x}, \vec{w}) = 1$:__ the public input and private witness satisfy the required correctness conditions.
 
-{{< tabs "uniqueid" >}}
-{{< tab "Multiplicative notation" >}}
 ### Interactive protocol
 A STARK-style proof can be understood through the following conceptual sequence. Actual STARK implementations use specific trace encodings, commitments, low-degree tests, and query procedures.
 
@@ -54,4 +52,3 @@ Using the Fiat–Shamir transformation, the prover derives challenges from a cry
  \end{aligned}
  $$
 {{< /rawhtml >}}
-{{< /tab >}}
