@@ -21,11 +21,13 @@ Here, the symbols mean:
 * __$C(\vec{x}, \vec{w}) = 1$:__ the public input and private witness satisfy the required correctness conditions.
 
 ### Interactive protocol
-The STARK interactive identification protocol
+A STARK-style proof can be understood through the following conceptual sequence. Actual STARK implementations use specific trace encodings, commitments, low-degree tests, and query procedures.
 
 {{< rawhtml >}}
  $$
-
-
+ \begin{array}{c}
+ \work{\varprover}{\varverifier}
+ \alicework{\samplezqs{\varr}
+ \alicework{\varu = \varg^\varr}
 
 {{< /rawhtml >}}
