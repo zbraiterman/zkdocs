@@ -9,5 +9,7 @@ references: ["stark"]
 # zk-STARK
 A zk-STARK (Zero-Knowledge Scalable Transparent Argument of Knowledge) is a cryptographic proof system that lets a prover convince a verifier that a computation was executed correctly without revealing private data or re-executing the code.
 
-
-Goal: \(\varprover\) convinces \(\varverifier\) that there exists a private witness w such that F(x,w)=y, without revealing w or requiring \(\varverifier\) to re-execute the computation.
+{{< hint info >}}
+**Goal:**
+$\varprover$ convinces $\varverifier$ that there exists a private witness w such that F(x,w)=y, without revealing w or requiring $\varverifier$ to re-execute the computation.
+{{< /hint >}}
