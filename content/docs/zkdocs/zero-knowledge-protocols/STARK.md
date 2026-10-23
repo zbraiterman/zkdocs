@@ -14,6 +14,12 @@ A zk-STARK (Zero-Knowledge Scalable Transparent Argument of Knowledge) is a cryp
 $\varprover$ convinces $\varverifier$ that $\exists, \vec{w}: C(\vec{x}, \vec{w}) = 1$.
 {{< /hint >}}
 
+Here, the symbols mean:
+* __$\vec{x}$:__ the public input, known to both the prover and verifier.
+* __$\vec{w}$:__ the private witness, known to the prover but not disclosed to the verifier.
+* __$C$:__ the computation or constraint system being verified.
+* __$C(\vec{x}, \vec{w}) = 1$:__ the public input and private witness satisfy the required correctness conditions.
+
 ### Interactive protocol
 The STARK interactive identification protocol
 
