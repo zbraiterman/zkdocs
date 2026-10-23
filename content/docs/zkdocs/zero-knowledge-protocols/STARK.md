@@ -11,5 +11,15 @@ A zk-STARK (Zero-Knowledge Scalable Transparent Argument of Knowledge) is a cryp
 
 {{< hint info >}}
 **Goal:**
-$\varprover$ convinces $\varverifier$ that there exists a private witness w such that F(x,w)=y, without revealing w or requiring $\varverifier$ to re-execute the computation.
+$\varprover$ convinces $\varverifier$ that $\exists, \vec{w}: C(\vec{x}, \vec{w}) = 1$.
 {{< /hint >}}
+
+### Interactive protocol
+The STARK interactive identification protocol
+
+{{< rawhtml >}}
+ $$
+
+
+
+{{< /rawhtml >}}
