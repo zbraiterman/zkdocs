@@ -41,3 +41,17 @@ The verifier checks the proof against the public statement and the protocol's ve
 
 ### Non-interactive protocol
 Using the Fiat–Shamir transformation, the prover derives challenges from a cryptographic hash of the transcript instead of receiving them interactively from the verifier.
+{{< rawhtml >}}
+ $$
+ \begin{aligned}
+ T &\leftarrow \operatorname{Execute}(F,\vec{x},\vec{w})\\
+ C_T &\leftarrow \operatorname{Commit}(T)\\
+ \alpha &\leftarrow H(\vec{x},y,C_T)\\
+ \pi &\leftarrow \operatorname{Prove}(T,C_T,\alpha)\\
+ &\\
+ \mathcal{V} &: \quad
+ \operatorname{Verify}(\vec{x},y,C_T,\pi)
+ \end{aligned}
+ $$
+{{< /rawhtml >}}
+{{< /tab >}}
