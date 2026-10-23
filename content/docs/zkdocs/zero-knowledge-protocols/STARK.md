@@ -29,5 +29,5 @@ A STARK-style proof can be understood through the following conceptual sequence.
  \work{\varprover}{\varverifier}
  \alicework{\samplezqs{\varr}
  \alicework{\varu = \varg^\varr}
-
+ $$
 {{< /rawhtml >}}
