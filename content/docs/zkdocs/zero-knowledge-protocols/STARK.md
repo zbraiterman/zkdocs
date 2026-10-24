@@ -27,7 +27,8 @@ A STARK-style proof can be understood through the following conceptual sequence.
  $$
  \begin{array}{c}
  \work{\varprover}{\varverifier}
- \alicework{Construct}{T}\ 
+ \alicework{Construct}
+ \alicework{\text{Low degree test}}{T}\ 
  \alicework{\text{Commit to encoded trace} \rightarrow \text{Commitment} \leftarrow \text{Challenges Construct proof responses} \rightarrow \pi}
  \bobwork{\text{Derive random challenges}}
  \bobwork{\text{Verify proof } \pi \text{ Accept or reject}}
@@ -49,8 +50,28 @@ Using the Fiat–Shamir transformation, the prover derives challenges from a cry
  \alpha &\leftarrow H(\vec{x},y,C_T)\\
  \pi &\leftarrow \operatorname{Prove}(T,C_T,\alpha)\\
  &\\
- \mathcal{V} &: \quad
+ {\varverifier} &:\quad
  \operatorname{Verify}(\vec{x},y,C_T,\pi)
  \end{aligned}
  $$
 {{< /rawhtml >}}
+
+Here, $C_T$ is a commitment to the encoded execution trace, $H$ is a cryptographic hash function, $\alpha$ represents a challenge, and $\pi$ is the proof.
+
+This is illustrative pseudocode in mathematical notation; real STARKs typically derive multiple challenges from a transcript containing multiple commitments and protocol messages.
+
+#### Verification requirements
+The verifier accepts only if the proof satisfies the protocol's checks:
+$$
+\boxed{
+\varverifier(\vec{x},y,\pi)=\text{accept}
+}
+\
+$$
+
+The intended security properties are:
+* __Completeness:__ A valid computation is accepted with high probability.
+* __Soundness:__ A false statement is accepted only with negligible probability.
+* __Zero knowledge:__ The proof reveals no additional information about the private witness beyond what the public statement implies.
+
+Together, these properties express the goal of a zk-STARK: convince the verifier that the claimed computation is valid without exposing the private witness or requiring full recomputation.
