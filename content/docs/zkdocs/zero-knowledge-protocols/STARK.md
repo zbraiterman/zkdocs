@@ -27,8 +27,10 @@ A STARK-style proof can be understood through the following conceptual sequence.
  $$
  \begin{array}{c}
  \work{\varprover}{\varverifier}
- \alicework{Construct}{T}
- \alicework{Commit to encoded trace}
+ \alicework{Construct}{T}\ 
+ \alicework{\text{Commit to encoded trace} \rightarrow \text{Commitment} \leftarrow \text{Challenges Construct proof responses} \rightarrow \pi}
+ \bobwork{\text{Derive random challenges}}
+ \bobwork{\text{Verify proof } \pi \text{ Accept or reject}}
  \end{array}
  $$
 {{< /rawhtml >}}
