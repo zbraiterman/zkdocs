@@ -27,13 +27,19 @@ A STARK-style proof can be understood through the following conceptual sequence.
  $$
  \begin{array}{c}
  \work{\varprover}{\varverifier}
- \alicework{Construct}
- \alicework{\text{Low degree test}}{T}\ 
- \alicework{\text{Commit to encoded trace} \rightarrow \text{Commitment} \leftarrow \text{Challenges Construct proof responses} \rightarrow \pi}
+ \alicework{\text{Construct}}
+ \alicework{\text{Low degree test}}
+ \alicework{T \text{ Commit to encoded trace}}
+ \alicebob{}{\text{Commitment}}{}
  \bobwork{\text{Derive random challenges}}
+ \bobalice{}{\text{Challenges}}{}
+ \alicework{\text{Construct proof responses}}
+ \alicebob{}{\pi}{}
+ \bobseparator
  \bobwork{\text{Verify proof } \pi \text{ Accept or reject}}
  \end{array}
  $$
+
 {{< /rawhtml >}}
 
 The verifier checks the proof against the public statement and the protocol's verification rules rather than re-executing the original computation.
@@ -44,15 +50,16 @@ The verifier checks the proof against the public statement and the protocol's ve
 Using the Fiat–Shamir transformation, the prover derives challenges from a cryptographic hash of the transcript instead of receiving them interactively from the verifier.
 {{< rawhtml >}}
  $$
- \begin{aligned}
- T &\leftarrow \operatorname{Execute}(F,\vec{x},\vec{w})\\
- C_T &\leftarrow \operatorname{Commit}(T)\\
- \alpha &\leftarrow H(\vec{x},y,C_T)\\
- \pi &\leftarrow \operatorname{Prove}(T,C_T,\alpha)\\
- &\\
- {\varverifier} &:\quad
- \operatorname{Verify}(\vec{x},y,C_T,\pi)
- \end{aligned}
+ \begin{array}{c}
+ \work{\varprover}{\varverifier}
+ \alicework{T \leftarrow \operatorname{Execute}(F,\vec{x},\vec{w})}
+ \alicework{C_T \leftarrow \operatorname{Commit}(T)}
+ \alicework{\alpha \leftarrow H(\vec{x},y,C_T)}
+ \alicework{\pi \leftarrow \operatorname{Prove}(T,C_T,\alpha)}
+ \alicebob{}{C_T, \pi}{}
+ \bobseparator
+ \bobwork{\operatorname{Verify}(\vec{x},y,C_T,\pi)}
+ \end{array}
  $$
 {{< /rawhtml >}}
 
